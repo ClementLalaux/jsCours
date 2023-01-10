@@ -13,4 +13,13 @@ function exoDeux(){
     console.log(`${nbA} + ${nbB} = ${res}`);
 }
 
-exoDeux();
+//exoDeux();
+
+function exoTrois(){
+    let diametre = Number(prompt("Entrez un rayon"));
+    let perimetre = Math.PI * diametre;
+    let aire = Math.PI * Math.pow((diametre/2),2);
+    console.log(`Le perimetre d'un cercle de diametre ${diametre} est de ${perimetre} et l'aire est de ${aire}`);
+}
+
+exoTrois();
