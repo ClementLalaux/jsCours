@@ -50,16 +50,10 @@ function exoCinq(){
 
 function carreOuRectangle(){
     let unOuAutre = prompt("Entrez 'carre' pour la fonction carre et 'rectangle' pour la fonction rectangle")
-    if(unOuAutre === "carre"){
-        exoQuatre();
-    } else if (unOuAutre === "rectangle"){
-        exoQuatreBis();
-    } else {
-        console.log("Pas le bon texte entré");
-    }
+    unOuAutre === "carre" ? exoQuatre() : unOuAutre === "rectangle" ? exoQuatreBis() : console.log("Pas le bon texte entré");
 }
 
-carreOuRectangle();
+//carreOuRectangle();
 
 //exoCinq();
 
@@ -72,3 +66,13 @@ function exoSix(){
 }
 
 //exoSix();
+
+function exoSept(){
+    let mailV = "azerty@hotmail.fr"
+    let mdpV = "azerty"
+    let mail =prompt('Entrez un mail');
+    let mdp =prompt('Entrez un mdp');
+    mailV === mail && mdpV === mdp ? console.log('Vous etes connecté') : console.log('Pas les bons accès');
+}
+
+exoSept();
