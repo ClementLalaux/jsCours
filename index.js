@@ -1,3 +1,7 @@
+function exoUn(){
+    let prenom = prompt("Ecrivez votre prénom : ");
+    let nom = prompt("Ecrivez votre nom : ");
+    console.log(`Bonjour ${nom} ${prenom}`);
+}
 
-a = prompt('Entre un mot')
-console.log(a)
+exoUn();
