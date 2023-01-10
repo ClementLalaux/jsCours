@@ -31,7 +31,15 @@ function exoQuatre(){
     console.log(`Le perimetre d'un carre de longueur ${cote} est de ${perimetre} et l'aire est de ${aire}`);
 }
 
-//exoQuatre();
+function exoQuatreBis(){
+    let cote1 = Number(prompt("Entrez un coté A"));
+    let cote2 = Number(prompt("Entrez un coté B"));
+    let perimetre = cote1 * 2 + cote2 * 2;
+    let aire = cote1 * cote2;
+    console.log(`Le perimetre d'un rectangle de longueur ${cote1} et largeur ${cote2} est de ${perimetre} et l'aire est de ${aire}`);
+}
+
+//exoQuatreBis();
 
 function exoCinq(){
     let cote1 = Number(prompt("Entrez un coté du triangle"));
