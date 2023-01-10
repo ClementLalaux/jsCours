@@ -72,7 +72,7 @@ function exoSept(){
     let mdpV = "azerty"
     let mail =prompt('Entrez un mail');
     let mdp =prompt('Entrez un mdp');
-    mailV === mail && mdpV === mdp ? console.log('Vous etes connecté') : console.log('Pas les bons accès');
+    mailV === mail ? (mdpV === mdp ? console.log('vous etes connecte') : console.log('Pas le bon mdp mais email correct')) : (mdpV === mdp ? console.log('Mauvais mail mais bon mdp') : console.log('Rien de bon'));
 }
 
 exoSept();
