@@ -48,6 +48,19 @@ function exoCinq(){
     console.log(`L'hypothénuse d'un triangle rectangle qui a pour côté ${cote1} et ${cote2} est de ${hypothenuse}`);
 }
 
+function carreOuRectangle(){
+    let unOuAutre = prompt("Entrez 'carre' pour la fonction carre et 'rectangle' pour la fonction rectangle")
+    if(unOuAutre === "carre"){
+        exoQuatre();
+    } else if (unOuAutre === "rectangle"){
+        exoQuatreBis();
+    } else {
+        console.log("Pas le bon texte entré");
+    }
+}
+
+carreOuRectangle();
+
 //exoCinq();
 
 function exoSix(){
