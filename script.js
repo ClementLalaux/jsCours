@@ -72,7 +72,35 @@ function exoSept(){
     let mdpV = "azerty"
     let mail =prompt('Entrez un mail');
     let mdp =prompt('Entrez un mdp');
-    mailV === mail ? (mdpV === mdp ? console.log('vous etes connecte') : console.log('Pas le bon mdp mais email correct')) : (mdpV === mdp ? console.log('Mauvais mail mais bon mdp') : console.log('Rien de bon'));
+    mailV === mail ? (mdpV === mdp ? console.log('vous etes connecte') : console.log('Pas le bon mdp mais email correct')) 
+    : (mdpV === mdp ? console.log('Mauvais mail mais bon mdp') : console.log('Rien de bon'));
 }
 
-exoSept();
+//exoSept();
+
+function exoHuit(){
+    let mot = prompt("Entrez un mot");
+    let i = 0;
+    while(mot[i] === mot[mot.length - 1 - i] && i < mot.length){
+        i++;
+    }
+    i == mot.length ? console.log('Palindrome') : console.log('Pas palindrome');
+}
+
+//exoHuit();
+
+function exoNeuf(){
+    let age = Number(prompt("Entrez l'age"));
+    let anciennete = Number(prompt("Entrez l'anciennete"));
+    let dernierSalaire = Number(prompt("Entrez le dernier salaire"));
+    
+    let indemnite = 0;
+
+    anciennete >= 1 && anciennete <10 ? indemnite += anciennete * (dernierSalaire /2 ) : indemnite += 10 * (dernierSalaire/2) + (anciennete-10) * dernierSalaire;
+
+    age >= 46 && age <50 ? indemnite += 2*dernierSalaire : age >= 50 ? indemnite += 5*dernierSalaire : console.log("trop tot pour le bonus");
+
+    console.log(indemnite);
+}
+
+exoNeuf();
