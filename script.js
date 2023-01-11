@@ -145,4 +145,92 @@ function exoDix(){
     }
 }
 
-exoDix();
+//exoDix();
+
+function exoOnze(){
+    let montantNet = Number(prompt("Entrez le montant net"));
+    let nbAdultes = Number(prompt("Entrez le nombre d'adultes"));
+    let nbEnfants = Number(prompt("Entrez le nombre d'enfants"));
+    let nbParts;
+    let impot = 0;
+
+    nbEnfants <= 0 ? nbParts = nbAdultes : nbEnfants <= 2 ? nbParts = nbAdultes + (nbEnfants/2) : nbParts = nbAdultes + (nbEnfants - 2) + 1;
+    montantNet = Math.round(montantNet / nbParts);
+
+    switch(true){
+        case montantNet >= 168995 :
+            impot = impot + Math.round((montantNet-168995) * 45 / 100);
+            montantNet = 168994;
+        case montantNet >= 78571 && montantNet <= 168994 :
+            impot = impot + Math.round((montantNet-78571) * 41 / 100);
+            montantNet = 78570;
+        case montantNet >= 27479 && montantNet <= 78570 :
+            impot = impot + Math.round((montantNet-27479) * 30 / 100);
+            montantNet = 27478;
+        case montantNet >= 10778 && montantNet <= 27478 :
+            impot = impot + Math.round((montantNet-10778) * 11 / 100);
+            break;
+        default:
+            console.log("Vous n'êtes pas imposable");
+    }
+    impot = impot * nbParts;
+    console.log(impot);
+}
+
+//exoOnze();
+
+function exoDouze(){
+    let nbHabitant = 96806;
+    let nbHabitantF = 120000;
+    let taux = 0.89
+    let i = 0;
+    while(nbHabitant < nbHabitantF){
+        nbHabitant = nbHabitant + (nbHabitant * (taux/100));
+        i++;
+    }
+
+    console.log(`Il faut ${i} années pour dépasser le seuil de ${nbHabitantF} habitants avec un taux de croissance de ${taux} % et atteindre ${nbHabitant} habitants`);
+}
+
+//exoDouze();
+
+function exoTreize(n){
+    let sum = 0;
+    let txt = "";
+    let j = 1;
+    for(let i = 1 ; i <= n/2;i ++ ){
+        j=i;
+        txt = `${n} = `
+        while(sum <= 45){
+            sum = sum + j;
+            txt = txt + " " +  j;
+            j++;
+            if(sum == n){
+                console.log(txt);
+                break;
+            }
+        }
+        txt = "";
+        sum = 0
+    }
+}
+
+//exoTreize(45);
+
+function exoQuatorze(){
+    let max = 0;
+    let min = 20;
+    let moyenne = 0;
+    let i = 0;
+    let valeur = Number(prompt('Entrez une valeur , si vous souhaitez arreter , entrez -1'));
+    while(valeur != -1 ){
+        valeur > max ? max = valeur : null;
+        valeur < min ? min = valeur : null;
+        moyenne = moyenne + valeur;
+        i++;
+        valeur = Number(prompt('Entrez une valeur , si vous souhaitez arreter , entrez -1'));
+    }
+    console.log(`La meilleure note est de ${max} , la pire note est de ${min} et la moyenne est de ${moyenne/i}`);
+}
+
+//exoQuatorze();
