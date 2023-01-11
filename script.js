@@ -89,6 +89,17 @@ function exoHuit(){
 
 //exoHuit();
 
+function exoHuitBis(){
+    let mot = prompt("Entrez un mot");
+    let motReverse = "";
+    for(let i = 0 ; i < mot.length; i++){
+        motReverse += String(mot[mot.length-i-1]);
+    }
+    mot == motReverse ? console.log("palindrome") : console.log("pas palindrome");
+}
+
+//exoHuitBis();
+
 function exoNeuf(){
     let age = Number(prompt("Entrez l'age"));
     let anciennete = Number(prompt("Entrez l'anciennete"));
@@ -103,4 +114,35 @@ function exoNeuf(){
     console.log(indemnite);
 }
 
-exoNeuf();
+//exoNeuf();
+
+function exoDix(){
+    let menu = prompt(`Choississez parmi le menu suivant : 
+    1 - Eau 
+    2 - Jus d'orange 
+    3 - Limonade  
+    4 - Café  
+    5 - Thé` ).toLowerCase();
+
+    switch (true){
+        case menu == "1" || menu == "eau" :
+            console.log("Vous avez choisi de l'eau");
+            break;
+        case menu =="2" || menu =="jus d'orange":
+            console.log("Vous avez choisi du jus d'orange");
+            break;
+        case menu =="3" || menu =="limonade":
+            console.log("Vous avez choisi de la limonade");
+            break;
+        case menu =="4" || menu =="café":
+            console.log("Vous avez choisi du café");
+            break;
+        case menu =="5" || menu =="thé":
+            console.log("Vous avez choisi du thé");
+            break;
+        default :
+            console.log("Le choix n'est pas possible")
+    }
+}
+
+exoDix();
