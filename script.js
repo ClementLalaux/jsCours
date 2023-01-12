@@ -154,7 +154,7 @@ function exoOnze(){
     let nbParts;
     let impot = 0;
 
-    nbEnfants <= 0 ? nbParts = nbAdultes : nbEnfants <= 2 ? nbParts = nbAdultes + (nbEnfants/2) : nbParts = nbAdultes + (nbEnfants - 2) + 1;
+    nbParts = nbEnfants <= 0 ? nbAdultes : nbEnfants <= 2 ? nbAdultes + (nbEnfants/2) : nbAdultes + (nbEnfants - 2) + 1;
     montantNet = Math.round(montantNet / nbParts);
 
     switch(true){
@@ -197,11 +197,11 @@ function exoDouze(){
 function exoTreize(n){
     let sum = 0;
     let txt = "";
-    let j = 1;
+
     for(let i = 1 ; i <= n/2;i ++ ){
         j=i;
         txt = `${n} = `
-        while(sum <= 45){
+        while(sum <= n){
             sum = sum + j;
             txt = txt + " " +  j;
             j++;
@@ -234,3 +234,110 @@ function exoQuatorze(){
 }
 
 //exoQuatorze();
+
+// let semaine = Array("Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche")
+
+// for(let i=0;i<semaine.length;i++){
+//     console.log(semaine[i]);
+//     if(i<4 && i>0){
+//         console.log("Debut de la semaine");
+//     }
+    
+// }
+// let prenom = ["Adam", "Etienne", "Sebastien", "Clement", "Virginie"];
+
+// for(p in prenom){
+//     console.log(prenom[p]);
+// }
+
+// let z = 0;
+// while(z < prenom.length){
+//     console.log(prenom[z]);
+//     z++;
+// }
+
+let etudiants = [ 
+    { 
+        prenom: "José", 
+        nom: "Garcia", 
+        matieres: { 
+            francais: 16, 
+            anglais: 7, 
+            humour: 14 
+        }  
+    }, 
+    { 
+        prenom: "Antoine", 
+        nom: "De Caunes", 
+        matieres: { 
+            francais: 15, 
+            anglais: 6, 
+            humour: 16, 
+            informatique: 4, 
+            sport: 10 
+        } 
+    } 
+]; 
+
+// Nom et prénom //
+
+function nomPrenom(tab){
+    for(let t of tab){
+        let aff = ""
+        for(j in t){
+            if(j == "prenom" || j == "nom"){
+                aff = aff + t[j] + " ";
+            } 
+        }
+        console.log(aff);
+    }
+}
+
+//nomPrenom(etudiants);
+
+// Matières et notes //
+
+function matiereNote(tab){
+    for(let t of tab){
+        for(j in t){
+            if(j == "prenom" || j == "nom"){
+                console.log(t[j]);
+            } 
+            if(j == "matieres"){
+                let matieres = t[j];
+                for(m in matieres){
+                    console.log(m + " : " + matieres[m]);
+                }
+            }
+        }
+        console.log("--------------");
+    }
+}
+
+//matiereNote(etudiants);
+
+function moyenne(tab){
+    for(let t of tab){
+        let aff = ""
+        for(j in t){
+            if(j == "prenom" || j == "nom"){
+                aff = aff + t[j] + " ";
+            } 
+            if(j == "matieres"){
+                let matieres = t[j];
+                let moyenne = 0;
+                let nb = 0;
+                for(m in matieres){
+                    moyenne = moyenne + matieres[m];
+                    nb++;
+                }
+                moyenne = (moyenne/nb);
+            aff = aff + " a " + (moyenne) + " de moyenne";
+            }
+        }
+        console.log(aff);
+        console.log("--------------");
+    }
+}
+
+moyenne(etudiants);
