@@ -283,13 +283,7 @@ let etudiants = [
 
 function nomPrenom(tab){
     for(let t of tab){
-        let aff = ""
-        for(j in t){
-            if(j == "prenom" || j == "nom"){
-                aff = aff + t[j] + " ";
-            } 
-        }
-        console.log(aff);
+        console.log(`${t.nom} ${t.prenom}`);
     }
 }
 
@@ -297,47 +291,31 @@ function nomPrenom(tab){
 
 // Matières et notes //
 
-function matiereNote(tab){
-    for(let t of tab){
-        for(j in t){
-            if(j == "prenom" || j == "nom"){
-                console.log(t[j]);
-            } 
-            if(j == "matieres"){
-                let matieres = t[j];
-                for(m in matieres){
-                    console.log(m + " : " + matieres[m]);
-                }
-            }
+function matiereNote(etudiants){
+    for(let etudiant of etudiants){
+        console.log(`${etudiant.nom} ${etudiant.prenom}`);
+        for(let moyenne in etudiant.matieres){
+            console.log(`${moyenne} : ${etudiant.matieres[moyenne]}`)
         }
         console.log("--------------");
     }
 }
 
-matiereNote(etudiants);
+//matiereNote(etudiants);
 
-function moyenne(tab){
-    for(let t of tab){
-        let aff = ""
-        for(j in t){
-            if(j == "prenom" || j == "nom"){
-                aff = aff + t[j] + " ";
-            } 
-            if(j == "matieres"){
-                let matieres = t[j];
-                let moyenne = 0;
-                let nb = 0;
-                for(m in matieres){
-                    moyenne = moyenne + matieres[m];
-                    nb++;
-                }
-                moyenne = (moyenne/nb);
-            aff = aff + " a " + (moyenne) + " de moyenne";
-            }
+function moyenne(etudiants){
+    for(let etudiant of etudiants){
+        console.log(`${etudiant.nom} ${etudiant.prenom}`);
+        let moy = 0;
+        let nbNote = 0;
+        for(let moyenne in etudiant.matieres){
+            console.log(`${moyenne} : ${etudiant.matieres[moyenne]}`);
+            moy = moy + etudiant.matieres[moyenne];
+            nbNote ++;
         }
-        console.log(aff);
+        console.log("La moyenne est de " + (moy/nbNote))
         console.log("--------------");
     }
 }
 
-//moyenne(etudiants);
+moyenne(etudiants);
