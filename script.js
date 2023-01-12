@@ -314,7 +314,7 @@ function matiereNote(tab){
     }
 }
 
-//matiereNote(etudiants);
+matiereNote(etudiants);
 
 function moyenne(tab){
     for(let t of tab){
@@ -340,4 +340,4 @@ function moyenne(tab){
     }
 }
 
-moyenne(etudiants);
+//moyenne(etudiants);
