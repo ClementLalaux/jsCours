@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestion des notes avec menu</h1>
+        <div>
+            <input type="button" value="Saisir les notes" id="saisir"/>
+            <input type="button" value="Voir la meilleure note" id="meilleur"/>
+            <input type="button" value="Voir la moyenne des notes" id="moyenne"/>
+            <input type="button" value="Voir la pire note" id="pire"/>
+        </div>
+        <div>
+            <h2>
+                Notes déjà saisies
+            </h2>
+            <div id="listeNotes">
+                <ul>
+
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li id="liMeilleure"></li>
+                    <li id="liPire"></li>
+                    <li id="liMoyenne"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
