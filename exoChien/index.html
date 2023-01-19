@@ -6,29 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <div>
+    <div class="container">
         <h3>Race de chien</h3>
-        <div>
-            <label for="nomC">Nom :</label>
-            <input type="text" name="nomC" id="nomC"/>
-            <label for="raceC">Race</label>
-            <input type="text" name="raceC" id="raceC"/>
-            <label for="ageC">Age</label>
-            <input type="number" name="ageC" id="ageC"/>
+        <div class="col-12 m-3">
+            <div class="mb-3">
+                <label for="nomC">Nom :</label>
+                <input type="text" name="nomC" id="nomC"/>
+            </div>
+            <div class="mb-3">
+                <label for="raceC">Race</label>
+                <input type="text" name="raceC" id="raceC"/>
+            </div>
+            <div class="mb-3">
+                <label for="ageC">Age</label>
+                <input type="number" name="ageC" id="ageC"/>
+            </div>
         </div>
-        <div>
+        <div class="col-12 m-3">
             <select id="selectC">
                 <option value="">
                     Choississez un chien
                 </option>
             </select>
         </div>
-        <div>
+        <div class="col-12 m-3">
             <input type="button" value="valider" id="validC" />
         </div>
-        <div>
+        <div class="col-12 m-3">
             <p id="textC">
                 
             </p>
@@ -36,4 +43,5 @@
     </div>
 </body>
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
