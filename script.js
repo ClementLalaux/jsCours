@@ -318,4 +318,60 @@ function moyenne(etudiants){
     }
 }
 
-moyenne(etudiants);
+//moyenne(etudiants);
+
+let legume = {
+    code : 3,
+    name : "poivron rouge",
+    prix : 4.99
+}
+
+const nom = (obj) => obj.name;
+
+// console.log(nom(legume));
+
+const hello = (nom,prenom) =>{
+    console.log(`bonjour ${nom} ${prenom}`);
+}
+
+//hello("lalaux","clement");
+
+const justePrix = () => {
+    let rand = Math.round(Math.random() * 1000);
+    let numJoueur = Number(prompt('Entrez une valeur entre 0 et 1000'));
+    while (numJoueur >= 0 && numJoueur <= 1000){
+        if(numJoueur > rand){
+            console.log("Nombre trop grand");
+        } else if(numJoueur < rand) {
+            console.log("Nombre trop petit");
+        } else{
+            console.log("Vous avez trouvé");
+            break;
+        } 
+        numJoueur = Number(prompt('Entrez une valeur entre 0 et 1000'));
+    }
+}
+
+//justePrix();
+
+
+
+
+const pendu = (motADeviner) => {  
+    let motB = "";
+    let nbEssai = 5;
+    for(let i = 0; i<motADeviner.length; i++){
+        motB = motB + "*";
+    }
+    let lettre = prompt("lettre");
+        let j = 0;
+        while( j >= 0 && j < motADeviner.length ){
+            j = motADeviner.indexOf(lettre,j);
+            motB = motB.substring(0,j) + lettre + motB.substring(j+1);
+            console.log(motB);
+            j = j+1;
+        }
+    
+}
+
+//pendu("test");
