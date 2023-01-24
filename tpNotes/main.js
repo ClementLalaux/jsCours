@@ -38,6 +38,9 @@ let selectMatiereBis = document.querySelector('#selection-matiere-bis');
 let nbMatiere = 1;
 let btnAjoutEleve = document.querySelector('#btn-ajout-eleve');
 let btnAjoutMatiere = document.querySelector('#btn-ajout-matiere');
+let btnAjoutNote = document.querySelector('#btn-ajout-note');
+let pMoyenne = document.querySelector('#moyenne');
+
 
 const refreshPersonne = () => {
     selectPersonne.innerHTML =`<option value="0">Sélectionnez un élève</option>`;
@@ -115,13 +118,29 @@ btnAjoutMatiere.addEventListener('click', () => {
     refreshMatiere();
 })
 
-selectPersonne.addEventListener("change", () => {
+btnAjoutNote.addEventListener('click', () => {
+    let ajoutNote = document.querySelector('#note-note').value;
+    let eleveId = selectPersonneBis.value;
+    let matiereId = selectMatiereBis.value;
+    if(ajoutNote>=0 && ajoutNote<=20 && eleveId != 0 && matiereId != 0){
+        monObjet[eleveId-1].matiere[mesMatieres[matiereId-1]].push(ajoutNote);
+    } else {
+        alert("Valeur pas acceptable")
+    }
+    
+})
+
+function chiante(){
     let eleveId = selectPersonne.value;
     let matiereId = selectMatiere.value;
     let ligne = ``;
     if(eleveId != 0 && matiereId == 0){
+        let it = 0;
+        let sum = 0;
         for (let key in monObjet[eleveId-1].matiere) {
-            for(l of monObjet[eleveId-1].matiere[key]){
+            for(let l of monObjet[eleveId-1].matiere[key]){
+                it++;
+                sum += l
                 ligne += `<tr>
                 <td>${monObjet[eleveId-1].nom}</td>
                 <td>${monObjet[eleveId-1].prenom}</td>
@@ -131,22 +150,60 @@ selectPersonne.addEventListener("change", () => {
             }
         }
         document.querySelector('tbody').innerHTML = ligne;
+        pMoyenne.textContent = `La moyenne est de ${sum/it}`
     } else if(eleveId == 0 && matiereId != 0){
-        
+        let it = 0;
+        let sum = 0;
+        for(let i = 0; i<monObjet.length ; i++){
+            for (let key in monObjet[i].matiere[mesMatieres[matiereId-1]]) {
+                it++;
+                sum += monObjet[i].matiere[mesMatieres[matiereId-1]][key]
+                ligne += `<tr>
+                    <td>${monObjet[i].nom}</td>
+                    <td>${monObjet[i].prenom}</td>
+                    <td>${mesMatieres[matiereId-1]}</td>
+                    <td>${monObjet[i].matiere[mesMatieres[matiereId-1]][key]}</td>
+                    </tr>`
+            }
+        }
+        pMoyenne.textContent = `La moyenne est de ${sum/it}`
+        document.querySelector('tbody').innerHTML = ligne;
     } else if(eleveId != 0 && matiereId != 0){
-        
+        let it = 0;
+        let sum = 0;
+            for (let key in monObjet[eleveId-1].matiere[mesMatieres[matiereId-1]]){
+                it++;
+                sum += monObjet[eleveId-1].matiere[mesMatieres[matiereId-1]][key];
+                ligne += `<tr>
+                <td>${monObjet[eleveId-1].nom}</td>
+                <td>${monObjet[eleveId-1].prenom}</td>
+                <td>${mesMatieres[matiereId-1]}</td>
+                <td>${monObjet[eleveId-1].matiere[mesMatieres[matiereId-1]][key]}</td>
+                </tr>`
+            }
+        pMoyenne.textContent = `La moyenne est de ${sum/it}`
+        document.querySelector('tbody').innerHTML = ligne;
     } else {
+        let it = 0;
+        let sum = 0;
         for(let m of monObjet){
             for (let key in m.matiere) {
                 for(l of m.matiere[key]){
+                    it++;
+                    sum += l;
                     ligne += `<tr>
-            <td>${m.nom}</td>
-            <th>${m.prenom}</td>
-            <td>${key}</td>
-            <td>${l}</td>
-            </tr>`
+                        <td>${m.nom}</td>
+                        <td>${m.prenom}</td>
+                        <td>${key}</td>
+                        <td>${l}</td>
+                        </tr>`
                 }
             }
         }
-    }  document.querySelector('tbody').innerHTML = ligne;
-});
+        pMoyenne.textContent = `La moyenne est de ${sum/it}`
+        document.querySelector('tbody').innerHTML = ligne;
+    }   
+}
+
+selectPersonne.addEventListener("change", chiante);
+selectMatiere.addEventListener("change", chiante);
