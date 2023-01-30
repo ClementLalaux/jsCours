@@ -1,4 +1,6 @@
 const myButton = document.querySelector('#valider');
+const test = document.querySelector('input[name="test"][data-value="test"]');
+console.log(test);
 
 myButton.addEventListener('click', () => {
     let nom = document.querySelector('#nom').value;
