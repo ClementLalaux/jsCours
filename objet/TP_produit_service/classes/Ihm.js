@@ -19,6 +19,10 @@ export class Ihm {
     }
 
     ajouter(){
+        if(this.formulaire.querySelector("input[name='tertiaire']:checked") == null){
+            alert("Pas de choix !");
+            return;
+        }
         const tertaire = this.formulaire.querySelector("input[name='tertiaire']:checked").value
         const titre = this.formulaire.querySelector("input[name='titre']").value
         const prix = this.formulaire.querySelector("input[name='prix']").value
