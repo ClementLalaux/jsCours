@@ -6,3 +6,4 @@ myButton.addEventListener('click', () => {
     let result = document.querySelector('#result');
     result.textContent = `Bonjour ${prenom} ${nom}`
 })
+
