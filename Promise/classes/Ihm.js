@@ -30,7 +30,7 @@ export default class Ihm{
     afficherTodo(tableau){
         this.tableauHtml = "";
         for(let t of tableau){
-            this.tableauHtml += `<tr><td>${t.id}</td><td>${t.titre}</td><td>${t.description}</td><td>${t.statut}</td></tr>`
+            this.tableauHtml += `<tr><td>${t.id}</td><td>${t.titre}</td><td>${t.description}</td><td>${t.statut}</td><td><button type="button" class="btn btn-primary" class="supprimer">Supprimer</button><button type="button" class="btn btn-secondary" class="modifier">Modifier</button></td></tr>`
         }
         return new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -51,6 +51,7 @@ export default class Ihm{
                 this.tableauTodo.push(ajout);
                 let txt = await this.afficherTodo(this.tableauTodo);
                 tab.innerHTML = txt;
+                this.supprimer();
 
             } catch (error) {
                 console.error(error);
@@ -84,7 +85,6 @@ export default class Ihm{
             e.preventDefault();
             try{
                 let todoRecherche = await this.recherche(this.formulaireRecherche.querySelector("#recherche-value").value);
-                console.log(todoRecherche);
                 let txt = await this.afficherTodo(todoRecherche);
                 tab.innerHTML = txt;
             } catch (error){
@@ -92,4 +92,6 @@ export default class Ihm{
             }
         })
     }
+
+
 }
