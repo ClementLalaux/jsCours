@@ -6,7 +6,7 @@ let click = document.getElementById('click');
 let compteur = document.getElementById('nombre-essais');
 let lettreUtilisees = document.getElementById('lettre-deja-tiret');
 
-let motMystere = new MotMystere("moldu");
+let motMystere = new MotMystere("teletravail");
 motMystere.remplirTableau();
 motMystere.afficherMotTiret(mot,compteur,lettreUtilisees);
 

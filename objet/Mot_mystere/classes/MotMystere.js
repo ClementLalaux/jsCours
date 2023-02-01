@@ -1,4 +1,3 @@
-
 export  class MotMystere{
 
     constructor(valeur){
@@ -7,7 +6,7 @@ export  class MotMystere{
         this.tableauVideBis = [];
         this.tableauLettreEntree = [];
         this.html = "";
-        this.compteur = 5;
+        this.compteur = 10;
     }
 
     remplirTableau(){
