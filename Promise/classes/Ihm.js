@@ -32,6 +32,7 @@ export default class Ihm{
         for(let t of tableau){
             this.tableauHtml += `<tr><td>${t.id}</td><td>${t.titre}</td><td>${t.description}</td><td>${t.statut}</td><td><button type="button" class="btn btn-primary" class="supprimer">Supprimer</button><button type="button" class="btn btn-secondary" class="modifier">Modifier</button></td></tr>`
         }
+
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (this.tableauHtml != "") {
@@ -51,7 +52,6 @@ export default class Ihm{
                 this.tableauTodo.push(ajout);
                 let txt = await this.afficherTodo(this.tableauTodo);
                 tab.innerHTML = txt;
-                this.supprimer();
 
             } catch (error) {
                 console.error(error);
@@ -92,6 +92,5 @@ export default class Ihm{
             }
         })
     }
-
 
 }
